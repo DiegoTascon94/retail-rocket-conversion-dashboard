@@ -1,0 +1,4 @@
+modelo,auc_roc,f1_convierte,recall_convierte,precision_convierte
+Logistic Regression,"0,96","0,36","0,92","0,23"
+Random Forest,"0,99","0,48","0,94","0,32"
+RF Optimizado,"0,99","0,51","0,93","0,35"

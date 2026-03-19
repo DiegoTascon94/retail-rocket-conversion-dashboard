@@ -1,0 +1,9 @@
+cluster,cluster_name,total_visitantes,avg_views,avg_atc,avg_sessions,avg_days_active,avg_atc_rate,total_convertidos,conv_rate
+0,"Exploradores
+Pasivos",152391,"3,936","0,004","1,766","4,358","0,0",362,"0,2"
+1,"Usuarios
+Fieles",49264,"11,493","0,362","4,808","50,206","1,0",2193,"4,5"
+2,"Compradores
+con Intención",29886,"4,009","1,564","1,61","3,604","62,0",8215,"27,5"
+3,"Visitantes
+Fantasma",1176039,"1,172","0,003","1,028","0,08","0,0",949,"0,1"
