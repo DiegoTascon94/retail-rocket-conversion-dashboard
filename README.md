@@ -30,9 +30,9 @@ Desarrollar un análisis end-to-end sobre el comportamiento de usuarios en una p
 - **Funnel con caída crítica en AddToCart:** Solo el 2.69% de visitantes agrega al carrito y el 0.84% completa una transacción, evidenciando una oportunidad de optimización significativa en la etapa de consideración.
 - **Miércoles como día pico de conversión:** La tasa de conversión alcanza su máximo los miércoles, mientras que fines de semana registran caídas del 35% respecto al promedio semanal.
 - **71.96% de tasa de abandono:** Más de 27,000 carritos son abandonados, con el 73% del abandono ocurriendo en los primeros 30 minutos — ventana crítica para campañas de retargeting.
-- **Revenue recuperable de $1,039,050:** Estimado conservador a $25/ítem, representando una oportunidad concreta de recuperación con estrategias de remarketing.
+- **Revenue recuperable cuantificado:** Calculado sobre el precio mediano real de los ítems (extraído de `item_properties`, propiedad 790), representando una oportunidad concreta de recuperación con estrategias de remarketing.
 - **Compradores con Intención como segmento prioritario:** Con una tasa de conversión del 28% y un promedio de 1.56 AddToCart, este segmento representa el mayor retorno por esfuerzo de retención.
-- **Random Forest Optimizado con AUC-ROC 0.99:** El modelo final predice conversión con alta precisión, siendo `total_atc` y `atc_rate` las variables de mayor importancia predictiva.
+- **Random Forest con diseño temporal anti-leakage:** El modelo se entrena sobre el 70% inicial del período (features) y predice conversiones en el 30% posterior (target), simulando condiciones reales de producción. Las variables de mayor importancia predictiva son `total_atc` y `atc_rate`.
 
 ---
 
@@ -50,7 +50,7 @@ El proyecto sigue un flujo analítico estructurado en 8 módulos que simula un e
 - **Optimización del funnel:** Las categorías con mayor tasa de conversión permiten focalizar inversión publicitaria donde el retorno es más predecible.
 - **Recuperación de carritos:** El 73% de abandono en los primeros 30 minutos define una ventana de acción concreta para campañas de email o notificaciones push inmediatas.
 - **Personalización por segmento:** Los 4 clusters habilitan estrategias diferenciadas — reactivación para Visitantes Fantasma, incentivos para Exploradores Pasivos y programas de fidelización para Usuarios Fieles y Compradores con Intención.
-- **Modelo predictivo en producción:** El RF Optimizado puede integrarse en un sistema de scoring en tiempo real para priorizar visitantes con alta probabilidad de conversión y activar ofertas personalizadas.
+- **Modelo predictivo en producción:** El RF Optimizado usa separación temporal (feature window / target window) para evitar data leakage y puede integrarse en un sistema de scoring en tiempo real para priorizar visitantes con alta probabilidad de conversión.
 
 ---
 
